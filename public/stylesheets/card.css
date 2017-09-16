@@ -47,10 +47,13 @@ article.card > .info > button {
     display: none;
 }
 
-article.card > .info > button:hover, article.card > .info > button:focus {
+article.card > .info > button:hover, 
+article.card > .info > button:focus {
     border-bottom: 4px solid #2F9AA1;
 }
 
-article.card:hover > .info > button, article.card:focus > .info > button {
+article.card:hover > .info > button, 
+article.card:focus > .info > button, 
+article.card:active > .info > button {
     display: block;
 }
