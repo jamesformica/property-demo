@@ -1,11 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
-        <title>Propery Demo</title>
+        <title>4realestate.com.au</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+
+        <link href="stylesheets/page.css" rel="stylesheet">
+        <link href="stylesheets/card.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <div class="logo">
+                <image src="images/logo.png" height="60px" />
+                <h1>4RealEstate<span>.</span>com<span>.</span>au</h1>
+            </div>
+            <span class="tagline">"yes, we are 4real"</span>
+        </header>
+
         <%= yield %>
     </body>
-
     <script data-main="javascripts/main" src="javascripts/require.js"></script>
-    <%# <script src="javascripts/mock-data.js"></script> %>
 </html>

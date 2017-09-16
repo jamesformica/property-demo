@@ -1,0 +1,56 @@
+article.card {
+    width: 100%;
+    margin: 40px 0;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+article.card > header {
+    height: 40px;
+    border-top-right-radius: 4px;
+}
+
+article.card > header > img {
+    height: 40px;
+    border-top-left-radius: 4px;
+}
+
+article.card > img {
+    width: 100%;
+}
+
+article.card > .info {
+    font-size: 1.4em;
+    letter-spacing: 0.5px;
+    background-color: white;
+    height: 80px;
+    padding: 0 20px;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article.card > .info > button {
+    font-size: 1.2em;
+    text-transform: lowercase;
+    color: white;
+    background-color: #4fd1d9;
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    display: none;
+}
+
+article.card > .info > button:hover, article.card > .info > button:focus {
+    border-bottom: 4px solid #2F9AA1;
+}
+
+article.card:hover > .info > button, article.card:focus > .info > button {
+    display: block;
+}

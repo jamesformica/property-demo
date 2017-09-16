@@ -1,0 +1,78 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+body > header {
+    width: 100%;
+    height: 300px;
+    border-bottom: 1px solid #4fd1d9;
+    background-image: url('../images/house-bg.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body > header > .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body > header > .logo > h1 {
+    margin: 0 0 0 20px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: black;
+}
+
+body > header > .logo > h1 > span {
+    color: #4fd1d9;
+}
+
+body > header > .tagline {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.8;    
+}
+
+.results-container {
+    width: 100%;
+    padding-top: 40px;
+    background-color: #F5F5F6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.results-container > section {
+    max-width: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.results-container > section:first-child {
+    flex-grow: 1;
+}
+
+.results-container > section > .header {
+    font-weight: bold;
+    font-size: 3em;
+    display: inline-block;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.results-container > section > .header::after {
+    content: ".";
+    color: #4fd1d9;
+}
