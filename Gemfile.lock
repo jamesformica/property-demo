@@ -1,14 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    jasmine (2.8.0)
-      jasmine-core (>= 2.8.0, < 3.0.0)
-      phantomjs
-      rack (>= 1.2.1)
-      rake
-    jasmine-core (2.8.0)
     mustermann (1.0.1)
-    phantomjs (2.1.1.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -24,7 +17,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jasmine
   rake
   sinatra
 

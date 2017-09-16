@@ -1,0 +1,19 @@
+{
+  "name": "4realestate",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.5"
+  },
+  "scripts": {},
+  "repository": {},
+  "author": "James Formica",
+  "devDependencies": {
+    "karma": "^1.7.1"
+  }
+}
