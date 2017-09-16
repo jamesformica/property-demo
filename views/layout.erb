@@ -7,18 +7,19 @@
 
         <link href="stylesheets/page.css" rel="stylesheet">
         <link href="stylesheets/card.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="logo">
-                <image src="images/logo.png" height="60px" />
+                <img src="images/logo.png" height="60" alt="logo" />
                 <h1>4RealEstate<span>.</span>com<span>.</span>au</h1>
             </div>
             <span class="tagline">"yes, we are 4real"</span>
         </header>
 
         <%= yield %>
+        
+        <script data-main="javascripts/main" src="javascripts/require.js"></script>
     </body>
-    <script data-main="javascripts/main" src="javascripts/require.js"></script>
 </html>

@@ -17,4 +17,12 @@ requirejs(["models/property", "mock-data"], function(Property, mockdata) {
 
         _saved.appendChild(_card);
     }
+
+    let _resultCount = document.getElementById("ui-result-count");
+    _resultCount.innerText = getResultCountMessage(resultData.results.length);
+
+    function getResultCountMessage(resultLength) {
+        let propCount = resultLength === 1 ? "property" : "properties";
+        return resultLength.toString() + " " + propCount + " found that matched your search criteria.";
+    }
 });
