@@ -55,13 +55,14 @@ body > header > .tagline {
 }
 
 .results-container > section {
-    max-width: 500px;
+    max-width: 300px;
     padding: 10px;
     box-sizing: border-box;
 }
 
 .results-container > section:first-child {
     flex-grow: 1;
+    max-width: 500px;
 }
 
 .results-container > section > .header {
