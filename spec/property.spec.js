@@ -1,14 +1,15 @@
 define([
     '../public/javascripts/models/property',
-    '../public/javascripts/mock-data'],
-    function (Property, MockData) {
+    '../public/javascripts/results-manager'],
+    function (Property, ResultsManager) {
         var responseData;
         var firstResult;
 
         // deserialise the data and populate the first result into a variable
         beforeEach(function () {
-            responseData = JSON.parse(MockData.data);
-            firstResult = responseData.results[0];
+            let resultsManager = new ResultsManager();
+            responseData = resultsManager.getResults();
+            firstResult = responseData[0];
         });
 
         describe('Instantiating a Property class', function () {
