@@ -1,22 +1,28 @@
+let resultsManager;
+let resultsCardManager;
+let savedCardManager;
+
 requirejs(["card-manager", "results-manager"], function(CardManager, ResultsManager) {
-    let resultsManager = new ResultsManager();
+    resultsManager = new ResultsManager();
     let results = resultsManager.getResults();
     let saved = resultsManager.getSaved();
     
     let _results = document.getElementById("ui-results");
     let _saved = document.getElementById("ui-saved");
 
-    let resultsCardManager = new CardManager(_results);
-    let savedCardManager = new CardManager(_saved);
-
-    resultsCardManager.addRange(results);
+    resultsCardManager = new CardManager(_results);
+    savedCardManager = new CardManager(_saved);
+    
+    savedCardManager.setRemoveMode();
     savedCardManager.addRange(saved);
+    resultsCardManager.addRange(results);
 
-    let _resultCount = document.getElementById("ui-result-count");
-    _resultCount.innerText = getResultCountMessage(results.length);
+    document.addEventListener('addproperty', function(e) {
+        let result = resultsManager.findResult(e.detail);
+        savedCardManager.add(result);
+    });
 
-    function getResultCountMessage(resultLength) {
-        let propCount = resultLength === 1 ? "property" : "properties";
-        return resultLength.toString() + " " + propCount + " found that matched your search criteria.";
-    }
+    document.addEventListener('removeproperty', function(e) {
+        savedCardManager.remove(e.detail);
+    });
 });

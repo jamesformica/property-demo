@@ -12,20 +12,24 @@ define(['./agency'], function(Agency) {
         this.agency = new Agency(result.agency);
     }
 
-//     <article class="card" tabindex="0">
-//     <header style="background-color: #ffe512">
-//         <image src="http://i1.au.reastatic.net/agencylogo/XRWXMT/12/20120927204448.gif">
-//     </header>
+    Property.prototype.draw = function(isInAddMode) {
+        if (isInAddMode == null || isInAddMode == undefined || typeof(isInAddMode) !== "boolean") {
+            isInAddMode = true;
+        }
 
-//     <image src="http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg">
-    
-//     <div class="info">
-//         <span>$726,500</span>
-//         <button type="button">Add Property</button>
-//     </div>
-//     </article>
+        let _button = document.createElement("button");
+        _button.type = "button";
+        if (isInAddMode) {
+            let e = new CustomEvent('addproperty', { detail: this.id });
+            _button.innerText = "Add Property";
+            _button.onclick = function() { document.dispatchEvent(e); };
+        } else {
+            let e = new CustomEvent('removeproperty', { detail: this.id });
+            _button.classList.add("remove")
+            _button.innerText = "Remove Property";
+            _button.onclick = function() { document.dispatchEvent(e); };
+        }
 
-    Property.prototype.draw = function() {
         let _cardArticle = document.createElement("article");
         _cardArticle.classList.add("card");
         _cardArticle.tabIndex = 0;
@@ -47,13 +51,9 @@ define(['./agency'], function(Agency) {
         let _price = document.createElement("span");
         _price.innerText = this.price;
 
-        let _addButton = document.createElement("button");
-        _addButton.type = "button";
-        _addButton.innerText = "Add Property";
-
         _header.appendChild(_agencyLogo);
         _info.appendChild(_price);
-        _info.appendChild(_addButton);
+        _info.appendChild(_button);
 
         _cardArticle.appendChild(_header);
         _cardArticle.appendChild(_propertyImage);

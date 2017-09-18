@@ -4,6 +4,7 @@ define(['./models/property'], function(Property) {
     function CardManager(_container) {
         this._container = _container;
         this.cardMap = new Map();
+        this.isInAddMode = true;
     }
 
     CardManager.prototype.add = function(result) {
@@ -12,7 +13,7 @@ define(['./models/property'], function(Property) {
         }
 
         let property = new Property(result);
-        let _card = property.draw();
+        let _card = property.draw(this.isInAddMode);
         let _realCard = this._container.appendChild(_card);
 
         this.cardMap.set(property, _realCard);
@@ -35,6 +36,10 @@ define(['./models/property'], function(Property) {
                 this.cardMap.delete(property);
             }
         }
+    }
+
+    CardManager.prototype.setRemoveMode = function() {
+        this.isInAddMode = false;
     }
 
     return CardManager;

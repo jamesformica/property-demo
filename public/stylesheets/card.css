@@ -60,6 +60,15 @@ article.card > .info > button:focus {
     background-color: #2FBCC4;
 }
 
+article.card > .info > button.remove {
+    background-color: #e74c3c;
+}
+
+article.card > .info > button.remove:hover, 
+article.card > .info > button.remove:focus {
+    background-color: #c0392b;
+}
+
 article.card:hover > .info > button, 
 article.card:focus > .info > button, 
 article.card:active > .info > button {
