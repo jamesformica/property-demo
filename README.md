@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jamesformica/property-demo.svg?branch=master)](https://travis-ci.org/jamesformica/property-demo)
+
 # Property Demo
 By James Formica
 
