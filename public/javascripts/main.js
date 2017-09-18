@@ -1,14 +1,14 @@
-let resultsManager;
-let resultsCardManager;
-let savedCardManager;
+var resultsManager;
+var resultsCardManager;
+var savedCardManager;
 
 requirejs(["card-manager", "results-manager"], function(CardManager, ResultsManager) {
     resultsManager = new ResultsManager();
-    let results = resultsManager.getResults();
-    let saved = resultsManager.getSaved();
+    var results = resultsManager.getResults();
+    var saved = resultsManager.getSaved();
     
-    let _results = document.getElementById("ui-results");
-    let _saved = document.getElementById("ui-saved");
+    var _results = document.getElementById("ui-results");
+    var _saved = document.getElementById("ui-saved");
 
     resultsCardManager = new CardManager(_results);
     savedCardManager = new CardManager(_saved);
@@ -26,7 +26,7 @@ requirejs(["card-manager", "results-manager"], function(CardManager, ResultsMana
     });
 
     document.addEventListener('addproperty', function(e) {
-        let result = resultsManager.findResult(e.detail);
+        var result = resultsManager.findResult(e.detail);
         savedCardManager.add(result);
     });
 

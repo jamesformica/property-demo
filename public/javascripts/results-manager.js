@@ -59,7 +59,7 @@ define(function() {
     }
 
     ResultsManager.prototype.findResult = function(id) {
-        for (let i = 0; i < this.data.results.length; i++) {
+        for (var i = 0; i < this.data.results.length; i++) {
             if (Number(this.data.results[i].id) === Number(id)) {
                 return this.data.results[i];
             }

@@ -7,7 +7,7 @@ define([
 
         // deserialise the data and populate the first result into a variable
         beforeEach(function () {
-            let resultsManager = new ResultsManager();
+            var resultsManager = new ResultsManager();
             responseData = resultsManager.getResults();
             firstResult = responseData[0];
         });
@@ -15,7 +15,7 @@ define([
         describe('Instantiating a Property class', function () {
 
             it('should contain the correct passed data', function () {
-                let prop = new Property(firstResult);
+                var prop = new Property(firstResult);
 
                 expect(prop.id.toString()).toBe(firstResult.id);
                 expect(prop.price).toBe(firstResult.price);
@@ -32,7 +32,7 @@ define([
                 firstResult.mainImage = undefined;
                 firstResult.agency = undefined;
 
-                let prop = new Property(firstResult);
+                var prop = new Property(firstResult);
 
                 expect(prop.id).toBe(-1);
                 expect(prop.price).toBe("");
@@ -49,7 +49,7 @@ define([
                 firstResult.mainImage = null;
                 firstResult.agency = null;
 
-                let prop = new Property(firstResult);
+                var prop = new Property(firstResult);
 
                 expect(prop.id).toBe(-1);
                 expect(prop.price).toBe("");
@@ -61,7 +61,7 @@ define([
             });
 
             it('should deal with no data (null)', function () {
-                let prop = new Property(null);
+                var prop = new Property(null);
 
                 expect(prop.id).toBe(-1);
                 expect(prop.price).toBe("");
@@ -73,7 +73,7 @@ define([
             });
 
             it('should deal with no data (undefined)', function () {
-                let prop = new Property(undefined);
+                var prop = new Property(undefined);
 
                 expect(prop.id).toBe(-1);
                 expect(prop.price).toBe("");
@@ -85,7 +85,7 @@ define([
             });
 
             it('should deal with the wrong data type', function () {
-                let prop = new Property("chicken");
+                var prop = new Property("chicken");
 
                 expect(prop.id).toBe(-1);
                 expect(prop.price).toBe("");
@@ -98,7 +98,7 @@ define([
 
             it('should deal with the wrong data type on agency', function () {
                 firstResult.agency = "turtle";
-                let prop = new Property(firstResult);
+                var prop = new Property(firstResult);
 
                 expect(prop.id.toString()).toBe(firstResult.id);
                 expect(prop.price).toBe(firstResult.price);
@@ -112,8 +112,8 @@ define([
 
         describe('Calling "draw" on a Property class', function () {
             it('should return a card element', function() {
-                let prop = new Property(firstResult);
-                let _card = prop.draw();
+                var prop = new Property(firstResult);
+                var _card = prop.draw();
         
                 expect(_card).not.toBeNull();
                 expect(_card).not.toBeUndefined();

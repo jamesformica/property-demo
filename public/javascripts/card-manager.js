@@ -12,9 +12,9 @@ define(['./models/property'], function(Property) {
             return;
         }
 
-        let property = new Property(result);
-        let _card = property.draw(this.isInAddMode);
-        let _realCard = this._container.appendChild(_card);
+        var property = new Property(result);
+        var _card = property.draw(this.isInAddMode);
+        var _realCard = this._container.appendChild(_card);
 
         this.cardMap.set(property, _realCard);
     }
@@ -24,13 +24,13 @@ define(['./models/property'], function(Property) {
             return;
         }
 
-        for (let i = 0; i < results.length; i++) {
+        for (var i = 0; i < results.length; i++) {
             this.add(results[i]);
         }
     }
 
     CardManager.prototype.remove = function(id) {
-        for (let [property, _card] of this.cardMap) {
+        for (var [property, _card] of this.cardMap) {
             if (property.id === Number(id)) {
                 _card.remove();
                 this.cardMap.delete(property);

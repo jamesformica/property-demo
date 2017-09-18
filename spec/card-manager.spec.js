@@ -7,7 +7,7 @@ define([
         var _tempElement;
 
         beforeEach(function () {
-            let resultsManager = new ResultsManager();
+            var resultsManager = new ResultsManager();
             results = resultsManager.getResults();
 
             _tempElement = document.createElement("div");
@@ -17,7 +17,7 @@ define([
         describe('Adding a card', function () {
             it('should add a valid result', function () {
                 cardManager.add(results[0]);
-                let keyValue = cardManager.cardMap.entries().next().value;
+                var keyValue = cardManager.cardMap.entries().next().value;
 
                 expect(cardManager.cardMap.size).toBe(1);
                 expect(keyValue[0]).not.toBeNull();
@@ -76,7 +76,7 @@ define([
                 expect(cardManager.cardMap.size).toBe(1);
                 expect(_tempElement.children.length).toBe(1);
 
-                let removeID = Number(results[0].id);
+                var removeID = Number(results[0].id);
                 cardManager.remove(removeID);
 
                 expect(cardManager.cardMap.size).toBe(0);
@@ -90,14 +90,14 @@ define([
                 expect(cardManager.cardMap.size).toBe(2);
                 expect(_tempElement.children.length).toBe(2);
 
-                let removeID = Number(results[1].id);
+                var removeID = Number(results[1].id);
                 cardManager.remove(removeID);
 
                 expect(cardManager.cardMap.size).toBe(1);
                 expect(_tempElement.children.length).toBe(1);
 
-                let keyValue = cardManager.cardMap.entries().next().value;
-                let property = keyValue[0];
+                var keyValue = cardManager.cardMap.entries().next().value;
+                var property = keyValue[0];
                 expect(property.id).toBe(Number(results[0].id));
             });
 

@@ -17,38 +17,38 @@ define(['./agency'], function(Agency) {
             isInAddMode = true;
         }
 
-        let _button = document.createElement("button");
+        var _button = document.createElement("button");
         _button.type = "button";
         if (isInAddMode) {
-            let e = new CustomEvent('addproperty', { detail: this.id });
+            var e = new CustomEvent('addproperty', { detail: this.id });
             _button.innerText = "Add Property";
             _button.onclick = function() { document.dispatchEvent(e); };
         } else {
-            let e = new CustomEvent('removeproperty', { detail: this.id });
+            var e = new CustomEvent('removeproperty', { detail: this.id });
             _button.classList.add("remove")
             _button.innerText = "Remove Property";
             _button.onclick = function() { document.dispatchEvent(e); };
         }
 
-        let _cardArticle = document.createElement("article");
+        var _cardArticle = document.createElement("article");
         _cardArticle.classList.add("card");
         _cardArticle.tabIndex = 0;
 
-        let _header = document.createElement("header")
+        var _header = document.createElement("header")
         _header.style.backgroundColor = this.agency.primaryColour;
 
-        let _agencyLogo = document.createElement("img");
+        var _agencyLogo = document.createElement("img");
         _agencyLogo.setAttribute("src", this.agency.logo);
         _agencyLogo.setAttribute("alt", "agency logo");
 
-        let _propertyImage = document.createElement("img");
+        var _propertyImage = document.createElement("img");
         _propertyImage.setAttribute("src", this.image);
         _propertyImage.setAttribute("alt", "property image");
 
-        let _info = document.createElement("div");
+        var _info = document.createElement("div");
         _info.classList.add("info");
 
-        let _price = document.createElement("span");
+        var _price = document.createElement("span");
         _price.innerText = this.price;
 
         _header.appendChild(_agencyLogo);
