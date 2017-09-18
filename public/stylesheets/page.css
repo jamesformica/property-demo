@@ -61,6 +61,7 @@ body > header > .tagline {
 }
 
 .results-container > section {
+    position: relative;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -86,7 +87,7 @@ body > header > .tagline {
     color: #4fd1d9;
 }
 
-.results-container > section.dark {
+.results-container > section.saved {
     border: 1px solid #e3e3e3;
 }
 
@@ -94,6 +95,16 @@ body > header > .tagline {
     max-width: 550px;
 }
 
-.results-container > section.dark > .card {
+.results-container > section.saved > .card {
     max-width: 300px;
+}
+
+.results-container > section > .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.mobile-only {
+    display: none;
 }

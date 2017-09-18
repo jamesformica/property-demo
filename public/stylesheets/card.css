@@ -16,7 +16,6 @@ article.card > img {
 }
 
 article.card > .info {
-    font-size: 1.4em;
     letter-spacing: 0.5px;
     background-color: white;
     height: 80px;
@@ -27,30 +26,12 @@ article.card > .info {
     align-items: center;
 }
 
+article.card > .info > span {
+    font-size: 1.4em;
+}
+
 article.card > .info > button {
-    font-size: 1.2em;
-    text-transform: lowercase;
-    color: white;
-    background-color: #4fd1d9;
-    border: 0;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
     display: none;
-}
-
-article.card > .info > button:hover, 
-article.card > .info > button:focus {
-    background-color: #2FBCC4;
-}
-
-article.card > .info > button.remove {
-    background-color: #e74c3c;
-}
-
-article.card > .info > button.remove:hover, 
-article.card > .info > button.remove:focus {
-    background-color: #c0392b;
 }
 
 article.card:hover > .info > button, 

@@ -1,0 +1,25 @@
+button {
+    font-size: 1.2em;
+    text-transform: lowercase;
+    color: white;
+    background-color: #4fd1d9;
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 5px;
+}
+
+button:hover, 
+button:focus {
+    background-color: #2FBCC4;
+}
+
+button.remove {
+    background-color: #e74c3c;
+}
+
+button.remove:hover, 
+button.remove:focus {
+    background-color: #c0392b;
+}

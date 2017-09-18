@@ -17,6 +17,14 @@ requirejs(["card-manager", "results-manager"], function(CardManager, ResultsMana
     savedCardManager.addRange(saved);
     resultsCardManager.addRange(results);
 
+    document.getElementById("ui-show-saved").addEventListener("click", function() {
+        _saved.classList.add("show");
+    });
+
+    document.getElementById("ui-close-saved").addEventListener('click', function() {
+        _saved.classList.remove("show");
+    });
+
     document.addEventListener('addproperty', function(e) {
         let result = resultsManager.findResult(e.detail);
         savedCardManager.add(result);
