@@ -1,6 +1,10 @@
 define(function() {
     "use strict";
 
+    /**
+     * Represents a real estate agency containing the branding colours and logo.
+     * @param agency a json object representing an agency
+     */
     function Agency(agency) {
         if (agency === null || agency === undefined || typeof agency !== 'object') {
             agency = {}

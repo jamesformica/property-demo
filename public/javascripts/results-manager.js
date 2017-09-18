@@ -1,6 +1,10 @@
 define(function() {
     "use strict";
 
+    /**
+     * The ResultsManager is responsible for providing the json data that
+     * will be rendered onto the DOM
+     */
     function ResultsManager() {
         var resultsString = JSON.stringify({
             "results": [{
@@ -50,14 +54,25 @@ define(function() {
         this.data = JSON.parse(resultsString);
     }
 
+    /**
+     * Returns the list of 'results'. This does not include saved properties.
+     */
     ResultsManager.prototype.getResults = function() {
         return this.data.results;
     }
 
+    /**
+     * Returns the list of 'saved properties' only.
+     */
     ResultsManager.prototype.getSaved = function() {
         return this.data.saved;
     }
 
+    /**
+     * Find the result (not saved property) that matched the supplied id.
+     * If no match is found, returns null.
+     * @param id the id of the result to find
+     */
     ResultsManager.prototype.findResult = function(id) {
         for (var i = 0; i < this.data.results.length; i++) {
             if (Number(this.data.results[i].id) === Number(id)) {

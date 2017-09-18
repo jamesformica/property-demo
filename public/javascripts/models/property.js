@@ -1,6 +1,11 @@
 define(['./agency'], function(Agency) {
     "use strict";
 
+    /**
+     * Represents a real estate property with such items as the price, image and the agency
+     * the property belongs to.
+     * @param result a json object representing a property
+     */
     function Property(result) {
         if (result === null || result === undefined || typeof result !== 'object') {
             result = {};   
@@ -12,6 +17,11 @@ define(['./agency'], function(Agency) {
         this.agency = new Agency(result.agency);
     }
 
+    /**
+     * Creates an <article class="card"> element with all appropriate data
+     * and returns it. NOTE: this does not add it to the DOM
+     * @param isInAddMode whether to include an 'add' button or a 'remove' button
+     */
     Property.prototype.draw = function(isInAddMode) {
         if (isInAddMode == null || isInAddMode == undefined || typeof(isInAddMode) !== "boolean") {
             isInAddMode = true;

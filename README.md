@@ -1,7 +1,7 @@
-![logo](https://fourrealestate.herokuapp.com/images/logo.png)
+
 [![Build Status](https://travis-ci.org/jamesformica/property-demo.svg?branch=master)](https://travis-ci.org/jamesformica/property-demo)
 
-# [4realestate.com.au](https://fourrealestate.herokuapp.com/)
+# ![logo](https://fourrealestate.herokuapp.com/images/logo.png)[4realestate.com.au](https://fourrealestate.herokuapp.com/)
 A simple real estate site by James Formica.
 
 ### Tech Stack
