@@ -1,4 +1,4 @@
-define(['models/property'], function(Property) {
+define(['./models/property'], function(Property) {
     "use strict";
 
     function CardManager(_container) {
@@ -7,6 +7,10 @@ define(['models/property'], function(Property) {
     }
 
     CardManager.prototype.add = function(result) {
+        if (result === null || result === undefined) {
+            return;
+        }
+
         let property = new Property(result);
         let _card = property.draw();
         let _realCard = this._container.appendChild(_card);
@@ -15,6 +19,10 @@ define(['models/property'], function(Property) {
     }
 
     CardManager.prototype.addRange = function(results) {
+        if (!Array.isArray(results)) {
+            return;
+        }
+
         for (let i = 0; i < results.length; i++) {
             this.add(results[i]);
         }
