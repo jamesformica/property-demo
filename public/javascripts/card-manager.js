@@ -19,6 +19,12 @@ define(['./models/property'], function (Property) {
         }
 
         var property = new Property(result);
+
+        // if we already have this property, then don't add it again
+        if (this.find(property.id) !== null) {
+            return;
+        }
+
         var _card = property.draw(this.isInAddMode);
         var _realCard = this._container.appendChild(_card);
 
@@ -45,13 +51,26 @@ define(['./models/property'], function (Property) {
      * @param id the id of the property to remove
      */
     CardManager.prototype.remove = function (id) {
-        var cardMap = this.cardMap;
-        cardMap.forEach(function(_card, property) {
+        var result = this.find(id);
+        if (result !== null) {
+            result[1].remove();
+            this.cardMap.delete(result[0]);
+        }
+    }
+
+    /**
+     * Attempts to match a property based on the supplied id and returns
+     * the pair. Otherwise returns null;
+     * @param id the id of the property to find
+     */
+    CardManager.prototype.find = function(id) {
+        var result = null;
+        this.cardMap.forEach(function(_card, property) {
             if (property.id === Number(id)) {
-                _card.remove();
-                cardMap.delete(property);
+                result = [property, _card];
             }
         });
+        return result;
     }
 
     /**

@@ -34,6 +34,18 @@ define([
                 expect(cardManager.cardMap.size).toBe(0);
                 expect(_tempElement.children.length).toBe(0);
             });
+
+            it('Should not add a duplicate result', function() {
+                cardManager.add(results[0]);
+                
+                expect(cardManager.cardMap.size).toBe(1);
+                expect(_tempElement.children.length).toBe(1);
+
+                cardManager.add(results[0]);
+
+                expect(cardManager.cardMap.size).toBe(1);
+                expect(_tempElement.children.length).toBe(1);
+            });
         });
 
         describe('Adding multiple cards', function () {
