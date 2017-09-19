@@ -27,7 +27,7 @@ define(['./models/property'], function (Property) {
 
         var _card = property.draw(this.isInAddMode);
         var _realCard = this._container.appendChild(_card);
-
+        
         this.cardMap.set(property, _realCard);
     }
 
