@@ -81,5 +81,25 @@ define(['./models/property'], function (Property) {
         this.isInAddMode = false;
     }
 
+    /**
+     * If we scroll past the top of the _container then make it fixed, and when we scroll
+     * back past it put it back to normal.
+     */
+    CardManager.prototype.setSticky = function() {
+        var offsetTop = this._container.offsetTop;
+        var _container = this._container;
+        var stickyClass = "sticky";
+        
+        window.addEventListener('scroll', function(e) {
+            var containsClass = _container.classList.contains(stickyClass);
+            
+            if (window.scrollY > offsetTop && !containsClass) {
+                _container.classList.add(stickyClass);
+            } else if (window.scrollY < offsetTop && containsClass) {
+                _container.classList.remove(stickyClass);
+            }
+        });
+    }
+
     return CardManager;
 });

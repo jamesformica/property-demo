@@ -2,12 +2,17 @@
 [![Build Status](https://travis-ci.org/jamesformica/property-demo.svg?branch=master)](https://travis-ci.org/jamesformica/property-demo)
 
 # ![logo](https://fourrealestate.herokuapp.com/images/logo.png)[4realestate.com.au](https://fourrealestate.herokuapp.com/)
-A simple real estate site by James Formica.
+
+## Yes, we are 4real!
+
+A simple real estate demo site by James Formica. 
+
+> I have actively tried to go as vanilla as possible with this project. Intentionally not using CSS pre-processors such as Sass or Less, or Coffee Script and such. I've also given jQuery the boot, who needs it anyway?!
 
 ### Tech Stack
 - **RequireJs**: Asynchronous Module Definition (AMD) loading
 - **Ruby Sinatra**: web app (7 lines of backend code haha)
-- **Karma / Jasmine**: frontend test suite
+- **Karma / Jasmine / Selenium**: frontend test suite
 
 ### To Run
 1. run `bundle install` to install the required gems
@@ -32,4 +37,4 @@ A simple real estate site by James Formica.
 - Add a CSS minifier to compress the css files into one download
 
 ### Travis CI
-This repository has been setup with [Travis CI](https://travis-ci.org/) to run the tests every commit.
+This repository has been setup with [Travis CI](https://travis-ci.org/jamesformica/property-demo/) to run the tests every commit.

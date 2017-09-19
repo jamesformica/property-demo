@@ -14,6 +14,8 @@ requirejs(["card-manager", "results-manager"], function(CardManager, ResultsMana
     savedCardManager = new CardManager(_saved);
     
     savedCardManager.setRemoveMode();
+    savedCardManager.setSticky();
+
     savedCardManager.addRange(saved);
     resultsCardManager.addRange(results);
 

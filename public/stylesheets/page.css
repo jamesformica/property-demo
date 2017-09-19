@@ -105,6 +105,13 @@ body > header > .tagline {
     right: 5px;
 }
 
-.mobile-only {
-    display: none;
+.results-container > section.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: auto;
 }

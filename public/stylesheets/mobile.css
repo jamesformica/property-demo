@@ -1,3 +1,9 @@
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         justify-content: space-between;
@@ -21,13 +27,15 @@
     }
 
     .results-container > section.saved {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         background-color: white;
-        margin: 0;
-        margin-top: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 100vh;
+        overflow: auto;
         display: none;
     }
 
