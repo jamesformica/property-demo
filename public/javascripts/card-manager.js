@@ -1,4 +1,4 @@
-define(['./models/property'], function(Property) {
+define(['./models/property'], function (Property) {
     "use strict";
 
     function CardManager(_container) {
@@ -13,7 +13,7 @@ define(['./models/property'], function(Property) {
      * to the internal Map of properties.
      * @param result a json object representing a property
      */
-    CardManager.prototype.add = function(result) {
+    CardManager.prototype.add = function (result) {
         if (result === null || result === undefined) {
             return;
         }
@@ -29,7 +29,7 @@ define(['./models/property'], function(Property) {
      * Adds a collection of results to the DOM and to the internal property Map
      * @param results an array of json objects representing properties
      */
-    CardManager.prototype.addRange = function(results) {
+    CardManager.prototype.addRange = function (results) {
         if (!Array.isArray(results)) {
             return;
         }
@@ -44,20 +44,21 @@ define(['./models/property'], function(Property) {
      * the internal property Map.
      * @param id the id of the property to remove
      */
-    CardManager.prototype.remove = function(id) {
-        for (var [property, _card] of this.cardMap) {
+    CardManager.prototype.remove = function (id) {
+        var cardMap = this.cardMap;
+        cardMap.forEach(function(_card, property) {
             if (property.id === Number(id)) {
                 _card.remove();
-                this.cardMap.delete(property);
+                cardMap.delete(property);
             }
-        }
+        });
     }
 
     /**
      * Puts the CardManager in 'remove mode' which means we will render
      * a 'remove property' button instead of an 'add property' button
      */
-    CardManager.prototype.setRemoveMode = function() {
+    CardManager.prototype.setRemoveMode = function () {
         this.isInAddMode = false;
     }
 

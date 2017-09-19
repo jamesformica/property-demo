@@ -19,7 +19,8 @@ A simple real estate site by James Formica.
 2. run `npm run jstest` to run the Karma tests in a firefox launcher (single run)
 3. (optionally) you can run `karma start` and it will monitor any changes and rerun the tests
 4. run `npm run uitest` to run the Selenium tests in a chrome webdriver
-5. (optionally) you can run `npm test` to run both the Karma tests and the Selenium tests after each other
+5. run `npm run lint` to run the esLint and make sure my javascript is up to ECMAScript 5 standards
+6. (optionally) you can run `npm test` to run both the Karma tests, Selenium tests, and esLint after each other
 
 ### Things I've noticed / done
 - The result that appears in the Saved Properties by default can never be re-added once deleted

@@ -12,12 +12,22 @@
     "karma-requirejs": "^1.1.0",
     "selenium-webdriver": "^3.0.0",
     "chromedriver": "^2.32.3",
-    "jslint": "^0.11.0"
+    "eslint": "^4.7.1"
   },
   "scripts": {
-    "test": "npm run jstest && npm run uitest",
+    "test": "npm run jstest && npm run uitest && npm run lint",
     "jstest": "karma start --browsers Firefox --single-run",
-    "uitest": "jasmine spec/integration/site.spec.js"
+    "uitest": "jasmine spec/integration/site.spec.js",
+    "lint": "eslint public/javascripts/** spec/**"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 5
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    }
   },
   "repository": {},
   "author": "James Formica"
