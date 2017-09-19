@@ -27,22 +27,10 @@ define(['./agency'], function(Agency) {
             isInAddMode = true;
         }
 
-        var _button = document.createElement("button");
-        _button.type = "button";
-        if (isInAddMode) {
-            var e = new CustomEvent('addproperty', { detail: this.id });
-            _button.innerText = "Add Property";
-            _button.onclick = function() { document.dispatchEvent(e); };
-        } else {
-            var e = new CustomEvent('removeproperty', { detail: this.id });
-            _button.classList.add("remove")
-            _button.innerText = "Remove Property";
-            _button.onclick = function() { document.dispatchEvent(e); };
-        }
-
         var _cardArticle = document.createElement("article");
         _cardArticle.classList.add("card");
         _cardArticle.tabIndex = 0;
+        _cardArticle.setAttribute("aria-label", "Property of price: " + this.price);
 
         var _header = document.createElement("header")
         _header.style.backgroundColor = this.agency.primaryColour;
@@ -61,6 +49,8 @@ define(['./agency'], function(Agency) {
         var _price = document.createElement("span");
         _price.innerText = this.price;
 
+        var _button = this.buildButton(isInAddMode);
+
         _header.appendChild(_agencyLogo);
         _info.appendChild(_price);
         _info.appendChild(_button);
@@ -70,6 +60,58 @@ define(['./agency'], function(Agency) {
         _cardArticle.appendChild(_info);
 
         return _cardArticle;
+    }
+
+    /**
+     * Constructs the <button> element which will either add the property to the saved list
+     * or remove it from the saved list.
+     */
+    Property.prototype.buildButton = function(isInAddMode) {
+        var _this = this;
+        var eventName = isInAddMode ? "addproperty" : "removeproperty";
+        var buttonText = isInAddMode ? "Add Property" : "Remove Property";
+        var buttonClickedText = isInAddMode ? "Added!" : "Removed!";
+
+        var _button = document.createElement("button");
+        _button.type = "button";
+        _button.innerText = buttonText;
+
+        _button.onclick = function() {
+            _this.click_cardButton.apply(_this, [_button, eventName, buttonClickedText]);
+        }
+        
+        _button.onblur = function() {
+            _this.blur_cardButton(_button, buttonText);
+        }
+
+        if (!isInAddMode) {
+            _button.classList.add("remove");
+        }
+
+        return _button;
+    }
+
+    /**
+     * Triggered when the card button is clicked. Dispatches an even to either add
+     * or remove the card and set the button text to the new value.
+     */
+    Property.prototype.click_cardButton = function(_button, eventName, newButtonText) {
+        var e = new CustomEvent(eventName, { detail: this.id });
+        document.dispatchEvent(e);
+
+        if (newButtonText && newButtonText.trim().length > 0) {
+            _button.innerText = newButtonText;
+        }
+    }
+
+    /**
+     * Trigger when the card button no longer has focus and sets the button text
+     * to the value supplied.
+     */
+    Property.prototype.blur_cardButton = function(_button, newButtonText) {
+        if (newButtonText && newButtonText.trim().length > 0) {
+            _button.innerText = newButtonText;
+        }
     }
 
     return Property;
