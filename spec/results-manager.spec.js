@@ -6,7 +6,7 @@ define(['../public/javascripts/results-manager'], function (ResultsManager) {
     });
 
     describe('Retrieving results', function () {
-        it('should return the correct data', function () {
+        it('Should return the correct data', function () {
             var results = resultsManager.getResults();
 
             expect(results.length).toBe(3);
@@ -17,7 +17,7 @@ define(['../public/javascripts/results-manager'], function (ResultsManager) {
     });
 
     describe('Retrieving saved properties', function() {
-        it('should return the correct data', function() {
+        it('Should return the correct data', function() {
             var saved = resultsManager.getSaved();
 
             expect(saved.length).toBe(1);
@@ -26,7 +26,7 @@ define(['../public/javascripts/results-manager'], function (ResultsManager) {
     });
 
     describe('Retrieving a particular result', function() {
-        it('should find the correct result', function() {
+        it('Should find the correct result', function() {
             var result = resultsManager.findResult(1);
             expect(result).not.toBeNull();
 
@@ -37,7 +37,7 @@ define(['../public/javascripts/results-manager'], function (ResultsManager) {
             expect(result).not.toBeNull();
         });
 
-        it('should find the correct result with strings', function() {
+        it('Should find the correct result with strings', function() {
             var result = resultsManager.findResult('1');
             expect(result).not.toBeNull();
 
@@ -45,12 +45,12 @@ define(['../public/javascripts/results-manager'], function (ResultsManager) {
             expect(result).not.toBeNull();
         });
 
-        it('should return null with an incorrect id', function() {
+        it('Should return null with an incorrect id', function() {
             var result = resultsManager.findResult(4);
             expect(result).toBeNull();
         });
 
-        it('should return null with an incorrect value', function() {
+        it('Should return null with an incorrect value', function() {
             var result = resultsManager.findResult("abc");
             expect(result).toBeNull();
 

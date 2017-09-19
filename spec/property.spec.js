@@ -14,7 +14,7 @@ define([
 
         describe('Instantiating a Property class', function () {
 
-            it('should contain the correct passed data', function () {
+            it('Should contain the correct passed data', function () {
                 var prop = new Property(firstResult);
 
                 expect(prop.id.toString()).toBe(firstResult.id);
@@ -26,7 +26,7 @@ define([
                 expect(prop.agency.logo).toBe(firstResult.agency.logo);
             });
 
-            it('should deal with undefined data', function () {
+            it('Should deal with undefined data', function () {
                 firstResult.id = undefined;
                 firstResult.price = undefined;
                 firstResult.mainImage = undefined;
@@ -43,7 +43,7 @@ define([
                 expect(prop.agency.logo).toBe("");
             });
 
-            it('should deal with null data', function () {
+            it('Should deal with null data', function () {
                 firstResult.id = null;
                 firstResult.price = null;
                 firstResult.mainImage = null;
@@ -60,7 +60,7 @@ define([
                 expect(prop.agency.logo).toBe("");
             });
 
-            it('should deal with no data (null)', function () {
+            it('Should deal with no data (null)', function () {
                 var prop = new Property(null);
 
                 expect(prop.id).toBe(-1);
@@ -72,7 +72,7 @@ define([
                 expect(prop.agency.logo).toBe("");
             });
 
-            it('should deal with no data (undefined)', function () {
+            it('Should deal with no data (undefined)', function () {
                 var prop = new Property(undefined);
 
                 expect(prop.id).toBe(-1);
@@ -84,7 +84,7 @@ define([
                 expect(prop.agency.logo).toBe("");
             });
 
-            it('should deal with the wrong data type', function () {
+            it('Should deal with the wrong data type', function () {
                 var prop = new Property("chicken");
 
                 expect(prop.id).toBe(-1);
@@ -96,7 +96,7 @@ define([
                 expect(prop.agency.logo).toBe("");
             });
 
-            it('should deal with the wrong data type on agency', function () {
+            it('Should deal with the wrong data type on agency', function () {
                 firstResult.agency = "turtle";
                 var prop = new Property(firstResult);
 
@@ -111,7 +111,7 @@ define([
         });
 
         describe('Calling "draw" on a Property class', function () {
-            it('should return a card element', function() {
+            it('Should return a card element', function() {
                 var prop = new Property(firstResult);
                 var _card = prop.draw();
         

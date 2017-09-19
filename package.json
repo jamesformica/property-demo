@@ -4,16 +4,20 @@
   "description": "",
   "devDependencies": {
     "requirejs": "^2.3.5",
-    "jasmine-core": "^2.8.0",
+    "jasmine": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-requirejs": "^1.1.0",
+    "selenium-webdriver": "^3.0.0",
+    "chromedriver": "^2.32.3",
     "jslint": "^0.11.0"
   },
   "scripts": {
-    "test": "karma start --browsers Firefox --single-run"
+    "test": "npm run jstest && npm run uitest",
+    "jstest": "karma start --browsers Firefox --single-run",
+    "uitest": "jasmine spec/integration/site.spec.js"
   },
   "repository": {},
   "author": "James Formica"

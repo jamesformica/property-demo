@@ -15,7 +15,7 @@ define([
         });
 
         describe('Adding a card', function () {
-            it('should add a valid result', function () {
+            it('Should add a valid result', function () {
                 cardManager.add(results[0]);
                 var keyValue = cardManager.cardMap.entries().next().value;
 
@@ -25,7 +25,7 @@ define([
                 expect(_tempElement.children.length).toBe(1);
             });
 
-            it('should not add an invalid result', function () {
+            it('Should not add an invalid result', function () {
                 cardManager.add(null);
                 expect(cardManager.cardMap.size).toBe(0);
                 expect(_tempElement.children.length).toBe(0);
@@ -37,21 +37,21 @@ define([
         });
 
         describe('Adding multiple cards', function () {
-            it('should add multiple valid results', function () {
+            it('Should add multiple valid results', function () {
                 cardManager.addRange(results);
 
                 expect(cardManager.cardMap.size).toBe(3);
                 expect(_tempElement.children.length).toBe(3);
             });
 
-            it('should not add invalid results', function () {
+            it('Should not add invalid results', function () {
                 cardManager.addRange(null);
 
                 expect(cardManager.cardMap.size).toBe(0);
                 expect(_tempElement.children.length).toBe(0);
             });
 
-            it('should not add types other than array', function () {
+            it('Should not add types other than array', function () {
                 cardManager.addRange("abc");
 
                 expect(cardManager.cardMap.size).toBe(0);
@@ -70,7 +70,7 @@ define([
         });
 
         describe('Removing a card', function () {
-            it('should remove a valid id', function () {
+            it('Should remove a valid id', function () {
                 cardManager.add(results[0]);
 
                 expect(cardManager.cardMap.size).toBe(1);
@@ -83,7 +83,7 @@ define([
                 expect(_tempElement.children.length).toBe(0);
             });
 
-            it('should remove only the correct id', function () {
+            it('Should remove only the correct id', function () {
                 cardManager.add(results[0]);
                 cardManager.add(results[1]);
 
@@ -101,7 +101,7 @@ define([
                 expect(property.id).toBe(Number(results[0].id));
             });
 
-            it('should not remove an id that does not exist', function () {
+            it('Should not remove an id that does not exist', function () {
                 cardManager.add(results[0]);
 
                 expect(cardManager.cardMap.size).toBe(1);
@@ -113,7 +113,7 @@ define([
                 expect(_tempElement.children.length).toBe(1);
             });
 
-            it('should handle null values', function () {
+            it('Should handle null values', function () {
                 cardManager.add(results[0]);
 
                 expect(cardManager.cardMap.size).toBe(1);
@@ -130,7 +130,7 @@ define([
                 expect(_tempElement.children.length).toBe(1);
             });
 
-            it('should handle invalid values', function () {
+            it('Should handle invalid values', function () {
                 cardManager.add(results[0]);
 
                 expect(cardManager.cardMap.size).toBe(1);
