@@ -28,6 +28,7 @@ A simple real estate demo site by James Formica.
 6. (optionally) you can run `npm test` to run both the Karma tests, Selenium tests, and esLint after each other
 
 ### Things I've noticed / done
+- I didn't put the json structure server side on purpose as the specification says it is 'mock backend data'
 - The result that appears in the Saved Properties by default can never be re-added once deleted
 - In 'mobile size' I have made the buttons on the cards always appear as this is a usability issue as 'hover' isn't exactly a thing on mobile devices / touch screens (ideally the buttons should be visible always)
 - I've added support for smaller screen sizes (responsive). It isn't the worlds best solution as this is a demo but I felt it important to add in as an example of what _could_ be done
