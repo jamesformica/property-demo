@@ -23,7 +23,7 @@
         </header>
 
         <nav>
-        <span class="ham">|||</span>
+        <span class="ham" onclick="alert('Who named this a hamburger? Now I\'m hungry :\(')">|||</span>
         <a href="#" class="stay" onclick="alert('I dont actually work')">Buy</a>
         <a href="#" class="stay" onclick="alert('Neither do I!')">Rent</a>
         <a href="#" class="stay" onclick="alert('I thought you would have gotten the picture by now...')">Invest</a>
@@ -37,6 +37,11 @@
         </nav>
 
         <%= yield %>
+
+        <footer>
+            <img src="images/logo.png" height="30" alt="logo" />
+            <p>This was made by James Formica in 2017. Hi mum!</p>
+        </footer>
         
         <script data-main="javascripts/main" src="javascripts/require.js"></script>
     </body>
