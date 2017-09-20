@@ -7,7 +7,7 @@
 
 A simple real estate demo site by James Formica. 
 
-> I have actively tried to go as vanilla as possible with this project. Intentionally not using CSS pre-processors such as Sass or Less, or Coffee Script and such. I've also given jQuery the boot, who needs it anyway?!
+> I have actively tried to go as vanilla as possible with this project. Intentionally not using CSS pre-processors such as Sass or Less, or Coffee Script and such. I've also given jQuery the boot, vanilla all the way!!
 
 ### Tech Stack
 - **RequireJs**: Asynchronous Module Definition (AMD) loading
